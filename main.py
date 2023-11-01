@@ -11,7 +11,7 @@ import os
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'testing' #remerber to delete
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 Bootstrap5(app)
 ckeditor = CKEditor(app)
 
