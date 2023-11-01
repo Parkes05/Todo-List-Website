@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<p class="message-rd">{{ messages[0] }}</p>
+{% endif %}
+{% endwith %}
+
+<div class="container my-list">
+    <h1>Welcome {{ current_user.name }}</h1>
+    <form method="post" action="{{ url_for('list') }}">
+        <input type="text" placeholder="Enter List Title" name="title" required>
+        <input type="submit" value="Add" class="submit-list">
+    </form>
+</div>
+
+<br>
+<div class="container">
+    <form method="post" action="{{ url_for('save') }}">
+        {% if list|length > 1: %}
+        <input type="checkbox" id="check1" name="option1" value="something" onclick="checkAll(this)">
+        <label>Select all</label>
+        <input type="text" id="result" name="title" hidden>
+        <a href="" class="final-del" data-bs-toggle="tooltip" data-bs-placement="left" title="Delete All Selected Items">Delete</a>
+        {% endif %}
+        <input class="btn btn-success yes-me" type="submit" value="Save List" onclick="sendItem()">
+    </form>
+</div>
+
+<div class="container">
+    <ul class="sortable-list" id="list">
+        {% for i in list %}
+        <li class="item" draggable="true" id="{{ i.id }}">
+            <img src="{{ url_for('static', filename='svg/three-dots-vertical.svg') }}">
+            <img class="dot" src="{{ url_for('static', filename='svg/three-dots-vertical.svg') }}">
+            <div class="details">
+                <input type="checkbox" name="chk" class="editing-checkbox">
+                <span class="name-of-list">{{ i.title }}</span>
+            </div>
+            <a class="my-del extra-item" href="{{ url_for('details', title=i.id) }}" type="button">Details</a>
+            <input class="my-del" onclick="removeItem('{{i.id}}')" type="button" value="X">
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block content %}
+{% if title: %}
+<div class="container">
+    <h1>{{ title }}</h1>
+    {% if new: %}
+    <p>Edit Items:</p>
+    <form method="post" action="{{ url_for('details', title=id) }}">
+        {{ ckeditor.create(value=new) }}
+        {{ ckeditor.load() }} 
+        <input class="btn btn-success extra_padding" type="submit" value="Save">
+    </form>
+    {% else: %}
+    {{ ckeditor.load() }} 
+    {{ ckeditor.config(name='list_items') }} 
+    {{ render_form(form, novalidate=True) }}
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

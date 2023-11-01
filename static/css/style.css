@@ -1,0 +1,130 @@
+.message-rd {
+    color: red;
+    font-size: medium;
+}
+
+.sortable-list {
+    object-fit: cover;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.sortable-list .item {
+    list-style: none;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 13px;
+    margin-bottom: 11px;
+}
+
+.item .details {
+    display: flex;
+}
+
+.item .details span {
+    font-size: 1.13rem;
+}
+
+.item i {
+    color: #4F4A45;
+    font-size: 1.13rem;
+}
+
+.item .dragging :where(.details, i) {
+    opacity: 0;
+}
+
+.test{
+    user-select: none;
+}
+
+.my-testing {
+    background-color: #ED7D31;
+}
+
+.nav-link {
+    color: #F6F1EE;
+}
+
+.rule {
+    margin: 0px;
+    padding-bottom: 10px;
+}
+
+.navbar-brand {
+    color: #F6F1EE;
+}
+
+.btn {
+   background-color: #6C5F5B;
+   border-color: #6C5F5B;
+}
+
+.btn:hover {
+   background-color: #6C5F5B;
+   border-color: #6C5F5B;
+}
+
+.my-p {
+    color: #4F4A45;
+}
+
+.submit-list {
+    color: white;
+    background-color: #6C5F5B;
+    border-color: #6C5F5B;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+img {
+    width: 10px;
+}
+
+.editing-checkbox {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.my-del {
+    border: 0px;
+    background-color: white;
+    color: red;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 0px;
+}
+
+.name-of-list {
+    color: blue;
+}
+
+.yes-me {
+    margin-left: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: 0px;
+}
+
+.final-del {
+    margin-left: 15px;
+    margin-right: 5px;
+    color: red;
+}
+
+h1 {
+    font-family: serif;
+    font-size: xx-large;
+}
+
+
+.extra-item {
+    color: green;
+    margin-left: 15px;
+}
+
+.extra_padding {
+    margin-top: 10px;
+}
